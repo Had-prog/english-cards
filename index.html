@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Cards</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>English Cards</h1>
+        <p class="stats">Выучено: <span id="learned-count">0</span> из <span id="total-count">0</span></p>
+        <div class="progress-bar">
+            <div id="progress-fill"></div>
+        </div>
+    </header>
+
+    <main>
+        <div class="add-word-form">
+    <input type="text" id="new-en" placeholder="Английское слово" required>
+    <input type="text" id="new-ru" placeholder="Русский перевод" required>
+    <button id="btn-add" class="btn btn-small">Добавить</button>
+        </div>
+        <div id="card-area"></div>
+
+        <div id="controls" class="hidden">
+            <button id="btn-again" class="btn btn-again">Ещё учить</button>
+            <button id="btn-know" class="btn btn-know">Знаю!</button>
+        </div>
+
+        <div class="service-buttons">
+            <button id="btn-shuffle" class="btn-small">Перемешать</button>
+            <button id="btn-reset" class="btn-small">Начать заново</button>
+        </div>
+    </main>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
