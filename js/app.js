@@ -18,6 +18,16 @@ const WORDS = [
     { en: "window", ru: "окно" }
 ];
 
+// ===== 1а. Свои слова из localStorage =====
+const CUSTOM_KEY = "englishCardsCustomWords";
+
+let customWords = JSON.parse(localStorage.getItem(CUSTOM_KEY) || "[]");
+WORDS.push(...customWords);
+
+function saveCustomWords() {
+    localStorage.setItem(CUSTOM_KEY, JSON.stringify(customWords));
+}
+
 // ===== 2. Прогресс из localStorage =====
 const STORAGE_KEY = "englishCardsProgress";
 
@@ -109,7 +119,58 @@ function updateStats() {
     document.getElementById("progress-fill").style.width = percent + "%";
 }
 
-// ===== 7. Запуск =====
+// ===== 7. Добавление своих слов =====
+const inputEn = document.getElementById("new-en");
+const inputRu = document.getElementById("new-ru");
+const btnAdd  = document.getElementById("btn-add");
+
+function addWord() {
+    const en = inputEn.value.trim().toLowerCase();
+    const ru = inputRu.value.trim();
+
+    if (!en || !ru) {
+        alert("Заполните оба поля: английское слово и перевод.");
+        return;
+    }
+
+    if (WORDS.some(w => w.en === en)) {
+        alert("Такое английское слово уже есть в словаре.");
+        return;
+    }
+
+    const word = { en: en, ru: ru };
+    WORDS.push(word);
+    customWords.push(word);
+    saveCustomWords();
+
+    inputEn.value = "";
+    inputRu.value = "";
+    inputEn.focus();
+
+    deck.push(word);   // новое слово сразу попадает в текущую колоду
+    updateStats();
+}
+
+btnAdd.addEventListener("click", function (e) {
+    e.preventDefault();   // на случай, если поля внутри <form>
+    addWord();
+});
+
+// Добавление по клавише Enter
+inputEn.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {
+        e.preventDefault();
+        addWord();
+    }
+});
+inputRu.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {
+        e.preventDefault();
+        addWord();
+    }
+});
+
+// ===== 8. Запуск =====
 document.getElementById("btn-know").addEventListener("click", () => mark(true));
 document.getElementById("btn-again").addEventListener("click", () => mark(false));
 document.getElementById("btn-shuffle").addEventListener("click", () => {
