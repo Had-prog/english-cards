@@ -178,3 +178,18 @@ main {
     outline: none;
     border-color: #667eea;
 }
+.speak-btn {
+    margin-top: 15px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.speak-btn:hover {
+    background: rgba(255, 255, 255, 0.35);
+}
