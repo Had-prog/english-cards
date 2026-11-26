@@ -78,14 +78,25 @@ function renderCard() {
     card.className = "card";
     card.innerHTML = `
         <div class="card-inner">
-            <div class="card-front">${word.en}</div>
+            <div class="card-front">${word.en}
+            <button class="speak-btn">🔊</button>
+            </div>
             <div class="card-back">${word.ru}</div>
         </div>`;
 
     card.addEventListener("click", () => {
-        card.classList.toggle("flipped");
-        controls.classList.toggle("hidden", !card.classList.contains("flipped"));
-    });
+    card.classList.toggle("flipped");
+    controls.classList.toggle("hidden", !card.classList.contains("flipped"));
+});
+
+card.querySelector(".speak-btn").addEventListener("click", (e) => {
+    e.stopPropagation();          // чтобы не переворачивалась карточка
+    const utterance = new SpeechSynthesisUtterance(word.en);
+    utterance.lang = "en-US";
+    utterance.rate = 0.9;         // чуть медленнее, чтобы разобрать
+    speechSynthesis.speak(utterance);
+});
+
 
     cardArea.appendChild(card);
     updateStats();
