@@ -1,6 +1,5 @@
 
-
-<video src="https://github.com/user-attachments/assets/ffc085f5-50d9-4a24-a2ae-9b8aff6a577c" controls width="600"></video>
+https://github.com/user-attachments/assets/ffc085f5-50d9-4a24-a2ae-9b8aff6a577c
 
 
 # Сайт для изучения английского языка
