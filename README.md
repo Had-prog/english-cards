@@ -1,4 +1,4 @@
-[[<video src=["https://github.com/Had-prog/english-cards/raw/653a721ca5e2ba76d716e1fc273de65cdba08be6/Video%20Project%205.mp4" controls width="600"](https://github.com/Had-prog/english-cards/blob/653a721ca5e2ba76d716e1fc273de65cdba08be6/Video%20Project%205.mp4)></video>](https://github.com/Had-prog/english-cards/blob/653a721ca5e2ba76d716e1fc273de65cdba08be6/Video%20Project%205.mp4)](https://github.com/Had-prog/english-cards/blob/653a721ca5e2ba76d716e1fc273de65cdba08be6/Video%20Project%205.mp4)](https://github.com/Had-prog/english-cards/blob/653a721ca5e2ba76d716e1fc273de65cdba08be6/Video%20Project%205.mp4)
+https://github.com/Had-prog/english-cards/raw/653a721ca5e2ba76d716e1fc273de65cdba08be6/Video%20Project%205.mp4
 # Сайт для изучения английского языка
 
 Простой веб-проект для тренировки английского языка. Сайт включает интерактивные карточки со словами, адаптивную верстку и минималистичный дизайн. Проект создан для отработки навыков фронтенд-разработки и демонстрации понимания связки HTML + CSS + JS.
